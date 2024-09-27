@@ -27,10 +27,10 @@ const AIPlatformPage: React.FC = () => {
         <section className="relative w-full h-screen">
           <Swiper
               modules={[Autoplay, Navigation, Pagination]}
-              autoplay={{ delay: 3000, disableOnInteraction: false }} // 자동 슬라이드, 3초마다
+              autoplay={{delay: 3000, disableOnInteraction: false}} // 자동 슬라이드, 3초마다
               loop={true} // 슬라이드를 무한 루프로 설정
               navigation // 좌우 화살표 추가
-              pagination={{ clickable: true }} // 페이지네이션 추가
+              pagination={{clickable: true}} // 페이지네이션 추가
               className="h-full"
               ref={swiperRef}
               allowTouchMove={true} // 터치 슬라이드 활성화
@@ -55,94 +55,112 @@ const AIPlatformPage: React.FC = () => {
         {/* 섹션 2 */}
         <section className="p-8 bg-gray-100">
           <div>
-            <Introduction />
-            <SlideShow />
+            <Introduction/>
+            <SlideShow/>
           </div>
         </section>
 
         {/* 섹션 구분선 */}
         <div className="border-t border-gray-300"></div>
 
-        {/* 섹션 3, 4 */}
-        <section className="p-8 bg-white">
-          <Swiper
-              modules={[Navigation, Pagination]}
-              spaceBetween={30} // 카드 사이의 간격을 설정
-              slidesPerView={1} // 한 번에 한 개의 슬라이드만 보이게 설정
-              navigation // 좌우 화살표 추가
-              pagination={{ clickable: true }} // 페이지네이션 추가
-          >
-            <SwiperSlide>
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-                  시각 콘텐츠 생성: Contents Optimization Platform (COP)
-                </h2>
-                <p className="text-base md:text-lg">
-                  COP는 생성형 AI를 활용해 다양한 마케팅 콘텐츠를 생성하는 플랫폼으로,
-                  기업의 브랜드 마케팅 담당자 및 광고 대행사 담당자들이 손쉽게 사용할 수 있습니다.
-                </p>
-                <Image
-                    src="/images/test3.jpg" // 이미지 경로
-                    alt="Example Image"
-                    width={1190}
-                    height={530}
-                    className="mx-auto"
-                />
-              </div>
-            </SwiperSlide>
+        <div className="relative">
+          {/* 섹션 2: 좌우 화살표로 이동 가능한 슬라이드 */}
+          <section className="p-8 bg-white">
+            <Swiper
+                modules={[Navigation, Pagination]}
+                spaceBetween={30} // 섹션 간 간격 설정
+                slidesPerView={1} // 한 번에 한 섹션만 보이게 설정
+                slidesPerGroup={1} // 한 번에 한 슬라이드만 넘기기
+                loop={true} // 무한 루프 설정
+                navigation={true} // 좌우 화살표 활성화
+                pagination={{clickable: true}} // 하단에 페이지네이션 추가
+                allowTouchMove={true} // 터치 슬라이드 가능
+            >
+              <SwiperSlide>
+                <div className="max-w-4xl mx-auto text-center">
+                  <h2 className="text-3xl font-semibold mb-4">
+                    시각 콘텐츠 생성: Contents Optimization Platform (COP)
+                  </h2>
+                  <p className="text-lg mb-8">
+                    COP는 생성형 AI를 활용해 다양한 마케팅 콘텐츠를 생성하는 플랫폼으로, 기업의 브랜드 마케팅 담당자 및 광고 대행사 담당자들이 손쉽게 사용할 수 있습니다.
+                  </p>
+                  <div className="w-full flex items-center justify-center">
+                    <Image
+                        src="/images/test3.jpg" // 이미지 경로
+                        alt="COP Example"
+                        width={1190}
+                        height={530}
+                        className="mx-auto"
+                        style={{maxWidth: '100%', height: 'auto'}} // 이미지 비율에 맞게 크기 조정
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
 
-            <SwiperSlide>
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
-                <p className="text-base md:text-lg">
-                  LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
-                  서비스를 제공하고 있습니다.
-                </p>
-                <Image
-                    src="/images/test4.jpg" // 이미지 경로
-                    alt="Example Image"
-                    width={1190}
-                    height={530}
-                    className="mx-auto"
-                />
-              </div>
-            </SwiperSlide>
+              <SwiperSlide>
+                <div className="max-w-4xl mx-auto text-center">
+                  <h2 className="text-3xl font-semibold mb-4">AI Coding</h2>
+                  <p className="text-lg mb-8">
+                    LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로 서비스를 제공하고 있습니다.
+                  </p>
+                  <div className="w-full flex items-center justify-center">
+                    <Image
+                        src="/images/test4.jpg" // 이미지 경로
+                        alt="AI Coding Example"
+                        width={1190}
+                        height={535}
+                        className="mx-auto"
+                        style={{maxWidth: '100%', height: 'auto'}} // 이미지 비율에 맞게 크기 조정
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
 
-            <SwiperSlide>
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
-                <p className="text-base md:text-lg">
-                  LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
-                  서비스를 제공하고 있습니다.
-                </p>
-                <Image
-                    src="/images/test2.jpg" // 이미지 경로
-                    alt="Example Image"
-                    width={1190}
-                    height={530}
-                    className="mx-auto"
-                />
-              </div>
-            </SwiperSlide>
+              <SwiperSlide>
+                <div className="max-w-4xl mx-auto text-center">
+                  <h2 className="text-3xl font-semibold mb-4">
+                    사내 지식 기반 답변: The next generation of KM
+                  </h2>
+                  <p className="text-lg mb-8">
+                    사내 임직원들이 업무에 필요한 지식을 찾기 위해 채팅창에 자연어로 질의하면 생성형 AI가 사내 데이터를 분석해 최적의 답변을 제공하는 서비스입니다.
+                  </p>
+                  <div className="w-full flex items-center justify-center">
+                    <Image
+                        src="/images/test2.jpg" // 이미지 경로
+                        alt="Knowledge Management Example"
+                        width={1190}
+                        height={923}
+                        className="mx-auto"
+                        style={{maxWidth: '100%', height: 'auto'}} // 이미지 비율에 맞게 크기 조정
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
 
-            <SwiperSlide>
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
-                <p className="text-base md:text-lg">
-                  LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
-                  서비스를 제공하고 있습니다.
-                </p>
-                <Image
-                    src="/images/test2.jpg" // 이미지 경로
-                    alt="Example Image"
-                    width={1190}
-                    height={530}
-                    className="mx-auto"
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </section>
+              <SwiperSlide>
+                <div className="max-w-4xl mx-auto text-center">
+                  <h2 className="text-3xl font-semibold mb-4">GenAI Studio</h2>
+                  <p className="text-lg mb-8">
+                    LG CNS GenAI Studio는 기업 고객이 GenAI를 접목해 DX를 가속화할 수 있도록 개발한 고객 참여형 프로그램입니다. 고객의 GenAI 도입 여정의 첫 걸음부터
+                    구체적인 실행에 이르기까지 전 과정을 빠르고 체계적으로 지원할 수 있도록 설계했습니다.
+                  </p>
+                  <div className="w-full flex items-center justify-center">
+                    <Image
+                        src="/images/test5.jpg" // 이미지 경로
+                        alt="GenAI Studio Example"
+                        width={1190}
+                        height={1430}
+                        className="mx-auto"
+                        style={{maxWidth: '100%', height: 'auto'}} // 이미지 비율에 맞게 크기 조정
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </section>
+        </div>
+
+
         {/* 섹션 구분선 */}
         <div className="border-t border-gray-300"></div>
 
@@ -185,30 +203,32 @@ const AIPlatformPage: React.FC = () => {
         </section>
 
 
-        {/* 섹션 구분선 */}
-        <div className="border-t border-gray-300"></div>
 
-        {/* 섹션 7 */}
-        <section className="min-h-[500px] flex items-center justify-center bg-white"> {/* 높이와 중앙 정렬 설정 */}
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-black mb-4">자세한 내용은 KT DS 전문가에게</h2>
-            <p className="text-2xl font-bold text-black mb-4">직접 문의하세요</p>
+  {/* 섹션 구분선 */
+  }
+  <div className="border-t border-gray-300"></div>
 
-            {/* 문의하기 버튼 */}
-            <a
-                href="/QnA/Contact"  // 문의 페이지의 링크로 변경하세요
-                className="inline-block bg-white text-black font-semibold py-3 px-6 border border-black rounded-lg shadow-md hover:bg-black hover:text-white transition-colors"
-            >
-              문의하기
-            </a>
-          </div>
-        </section>
+  {/* 섹션 7 */
+  }
+  <section className="min-h-[500px] flex items-center justify-center bg-white"> {/* 높이와 중앙 정렬 설정 */}
+    <div className="max-w-4xl mx-auto text-center">
+      <h2 className="text-2xl font-bold text-black mb-4">자세한 내용은 KT DS 전문가에게</h2>
+      <p className="text-2xl font-bold text-black mb-4">직접 문의하세요</p>
+
+      {/* 문의하기 버튼 */}
+      <a
+          href="/QnA/Contact"  // 문의 페이지의 링크로 변경하세요
+          className="inline-block bg-white text-black font-semibold py-3 px-6 border border-black rounded-lg shadow-md hover:bg-black hover:text-white transition-colors"
+      >
+        문의하기
+      </a>
+    </div>
+  </section>
 
 
-
-
-      </div>
-  );
+</div>
+)
+  ;
 };
 
 const cards = [
@@ -287,32 +307,32 @@ const cards = [
 ];
 const SlideShow = () => {
   return (
-    <div className="w-full py-8 overflow-hidden">
-      <Swiper
-        spaceBetween={5} // 이미지 간 간격을 좁게 설정
-        loop={true} // 무한 반복 슬라이드
-        speed={6000} // 슬라이드 속도를 천천히 설정
-        autoplay={{
-          delay: 0, // 슬라이드가 멈추지 않고 계속해서 흐르게 설정
-          disableOnInteraction: false, // 상호작용 후에도 다시 슬라이드 작동
-          pauseOnMouseEnter: true, // 마우스가 호버할 때 슬라이드 멈춤
-        }}
-        freeMode={true} // 부드럽게 계속 흐르도록 설정
-        breakpoints={{
-          // 화면 너비가 640px 이하일 때 (모바일)
-          640: {
-            slidesPerView: 1, // 한 번에 한 개의 카드
-          },
-          // 화면 너비가 768px 이하일 때 (태블릿)
-          768: {
-            slidesPerView: 2, // 한 번에 두 개의 카드
-          },
-          // 화면 너비가 1024px 이하일 때 (중간 크기 화면)
-          1024: {
-            slidesPerView: 4, // 한 번에 네 개의 카드
-          },
-          // 화면 너비가 1280px 이상일 때 (데스크탑)
-          1280: {
+      <div className="w-full py-8 overflow-hidden">
+        <Swiper
+            spaceBetween={5} // 이미지 간 간격을 좁게 설정
+            loop={true} // 무한 반복 슬라이드
+            speed={6000} // 슬라이드 속도를 천천히 설정
+            autoplay={{
+              delay: 0, // 슬라이드가 멈추지 않고 계속해서 흐르게 설정
+              disableOnInteraction: false, // 상호작용 후에도 다시 슬라이드 작동
+              pauseOnMouseEnter: true, // 마우스가 호버할 때 슬라이드 멈춤
+            }}
+            freeMode={true} // 부드럽게 계속 흐르도록 설정
+            breakpoints={{
+              // 화면 너비가 640px 이하일 때 (모바일)
+              640: {
+                slidesPerView: 1, // 한 번에 한 개의 카드
+              },
+              // 화면 너비가 768px 이하일 때 (태블릿)
+              768: {
+                slidesPerView: 2, // 한 번에 두 개의 카드
+              },
+              // 화면 너비가 1024px 이하일 때 (중간 크기 화면)
+              1024: {
+                slidesPerView: 4, // 한 번에 네 개의 카드
+              },
+              // 화면 너비가 1280px 이상일 때 (데스크탑)
+              1280: {
             slidesPerView: 6, // 한 번에 여섯 개의 카드
           },
         }}
