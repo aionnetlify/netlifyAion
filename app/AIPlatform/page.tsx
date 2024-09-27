@@ -22,92 +22,192 @@ const AIPlatformPage: React.FC = () => {
   const swiperRef = useRef<any>(null);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/*/!* 섹션 1 *!/*/}
-      <section className="relative w-full h-screen">
-        <Swiper
-          modules={[Autoplay]}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // 자동 슬라이드, 3초마다
-          loop={true} // 슬라이드를 무한 루프로 설정
-          className="h-full"
-          ref={swiperRef}
-          allowTouchMove={true} // 터치 슬라이드 활성화
-        >
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative w-full h-full flex items-center justify-center">
-                <img
-                  src={src}
-                  alt={`Slide ${index}`}
-                  className="object-cover w-full h-full"
+      <div className="flex flex-col min-h-screen">
+        {/* 섹션 1 */}
+        <section className="relative w-full h-screen">
+          <Swiper
+              modules={[Autoplay, Navigation, Pagination]}
+              autoplay={{ delay: 3000, disableOnInteraction: false }} // 자동 슬라이드, 3초마다
+              loop={true} // 슬라이드를 무한 루프로 설정
+              navigation // 좌우 화살표 추가
+              pagination={{ clickable: true }} // 페이지네이션 추가
+              className="h-full"
+              ref={swiperRef}
+              allowTouchMove={true} // 터치 슬라이드 활성화
+          >
+            {images.map((src, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                        src={src}
+                        alt={`Slide ${index}`}
+                        className="object-cover w-full h-full"
+                    />
+                  </div>
+                </SwiperSlide>
+            ))}
+          </Swiper>
+        </section>
+
+        {/* 섹션 구분선 */}
+        <div className="border-t border-gray-300"></div>
+
+        {/* 섹션 2 */}
+        <section className="p-8 bg-gray-100">
+          <div>
+            <Introduction />
+            <SlideShow />
+          </div>
+        </section>
+
+        {/* 섹션 구분선 */}
+        <div className="border-t border-gray-300"></div>
+
+        {/* 섹션 3, 4 */}
+        <section className="p-8 bg-white">
+          <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={30} // 카드 사이의 간격을 설정
+              slidesPerView={1} // 한 번에 한 개의 슬라이드만 보이게 설정
+              navigation // 좌우 화살표 추가
+              pagination={{ clickable: true }} // 페이지네이션 추가
+          >
+            <SwiperSlide>
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+                  시각 콘텐츠 생성: Contents Optimization Platform (COP)
+                </h2>
+                <p className="text-base md:text-lg">
+                  COP는 생성형 AI를 활용해 다양한 마케팅 콘텐츠를 생성하는 플랫폼으로,
+                  기업의 브랜드 마케팅 담당자 및 광고 대행사 담당자들이 손쉽게 사용할 수 있습니다.
+                </p>
+                <Image
+                    src="/images/test3.jpg" // 이미지 경로
+                    alt="Example Image"
+                    width={1190}
+                    height={530}
+                    className="mx-auto"
                 />
               </div>
             </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
 
-      {/* 섹션 구분선 */}
-      <div className="border-t border-gray-300"></div>
+            <SwiperSlide>
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
+                <p className="text-base md:text-lg">
+                  LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
+                  서비스를 제공하고 있습니다.
+                </p>
+                <Image
+                    src="/images/test4.jpg" // 이미지 경로
+                    alt="Example Image"
+                    width={1190}
+                    height={530}
+                    className="mx-auto"
+                />
+              </div>
+            </SwiperSlide>
 
-      {/* 섹션 2 */}
-      <section className="p-8 bg-gray-100">
-        <div>
-          <Introduction />
-          <SlideShow />
-        </div>
-      </section>
+            <SwiperSlide>
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
+                <p className="text-base md:text-lg">
+                  LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
+                  서비스를 제공하고 있습니다.
+                </p>
+                <Image
+                    src="/images/test2.jpg" // 이미지 경로
+                    alt="Example Image"
+                    width={1190}
+                    height={530}
+                    className="mx-auto"
+                />
+              </div>
+            </SwiperSlide>
 
-      {/* 섹션 구분선 */}
-      <div className="border-t border-gray-300"></div>
+            <SwiperSlide>
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
+                <p className="text-base md:text-lg">
+                  LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
+                  서비스를 제공하고 있습니다.
+                </p>
+                <Image
+                    src="/images/test2.jpg" // 이미지 경로
+                    alt="Example Image"
+                    width={1190}
+                    height={530}
+                    className="mx-auto"
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </section>
+        {/* 섹션 구분선 */}
+        <div className="border-t border-gray-300"></div>
 
-      {/* 섹션 3 */}
-      <section className="p-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            시각 콘텐츠 생성: Contents Optimization Platform (COP)
-          </h2>
-          <p className="text-base md:text-lg">
-            COP는 생성형 AI를 활용해 다양한 마케팅 콘텐츠를 생성하는 플랫폼으로,
-            기업의 브랜드 마케팅 담당자 및 광고 대행사 담당자들이 손쉽게 사용할
-            수 있습니다.
-          </p>
-          <Image
-            src="/images/test3.jpg" // 이미지 경로
-            alt="Example Image"
-            width={1190}
-            height={530}
-            className="mx-auto"
-          />
-        </div>
-      </section>
+        {/* 섹션 6 */}
+        {/* 섹션 6 */}
+        <section className="min-h-[500px] flex items-center justify-center bg-gray-100"> {/* 높이와 중앙 정렬 설정 */}
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-black mb-8">DAP GenAI Knowledge Lake 특장점</h2>
 
-      {/* 섹션 구분선 */}
-      <div className="border-t border-gray-300"></div>
+            {/* 특장점 목록을 개별 박스 형태로 */}
+            <div className="space-y-8">
+              <div className="border border-gray-300 p-6 rounded-lg bg-white shadow-sm">
+                <div className="flex items-start">
+                  <span className="text-red-500 text-2xl font-bold mr-4">1</span>
+                  <p className="text-black">
+                    Pre-Built 된 파서와 최적의 LLM, 임베딩 모델을 활용해 쉽고 빠르게 지식데이터를 구축할 수 있습니다.
+                  </p>
+                </div>
+              </div>
 
-      {/* 섹션 4 */}
-      <section className="p-8 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">AI Coding</h2>
-          <p className="text-base md:text-lg">
-            LG CNS의 AI Coding은 자체 확보한 모델 또는 빅테크 기업의 API모델로
-            서비스를 제공하고 있습니다.
-          </p>
-          <Image
-            src="/images/test4.jpg" // 이미지 경로
-            alt="Example Image"
-            width={1190}
-            height={530}
-            className="mx-auto"
-          />
-        </div>
-      </section>
+              <div className="border border-gray-300 p-6 rounded-lg bg-white shadow-sm">
+                <div className="flex items-start">
+                  <span className="text-red-500 text-2xl font-bold mr-4">2</span>
+                  <p className="text-black">
+                    검색 성능 보장을 위한 최적의 설정값을 설계하고, 이를 기반으로 대량의 문서를 지식화하는 RAG 파이프라인을 구축하고 운영할 수 있습니다.
+                  </p>
+                </div>
+              </div>
 
-      {/* 푸터 */}
-      {/* <footer className="bg-gray-800 text-white text-center p-4 mt-auto">
-                <p>&copy; {new Date().getFullYear()} AI Platform. All rights reserved.</p>
-            </footer> */}
-    </div>
+              <div className="border border-gray-300 p-6 rounded-lg bg-white shadow-sm">
+                <div className="flex items-start">
+                  <span className="text-red-500 text-2xl font-bold mr-4">3</span>
+                  <p className="text-black">
+                    지식데이터 관리를 위한 보안, 권한관리, 인프라에 대한 Governance 체계를 제공합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* 섹션 구분선 */}
+        <div className="border-t border-gray-300"></div>
+
+        {/* 섹션 7 */}
+        <section className="min-h-[500px] flex items-center justify-center bg-white"> {/* 높이와 중앙 정렬 설정 */}
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-black mb-4">자세한 내용은 KT DS 전문가에게</h2>
+            <p className="text-2xl font-bold text-black mb-4">직접 문의하세요</p>
+
+            {/* 문의하기 버튼 */}
+            <a
+                href="/QnA/Contact"  // 문의 페이지의 링크로 변경하세요
+                className="inline-block bg-white text-black font-semibold py-3 px-6 border border-black rounded-lg shadow-md hover:bg-black hover:text-white transition-colors"
+            >
+              문의하기
+            </a>
+          </div>
+        </section>
+
+
+
+
+      </div>
   );
 };
 
