@@ -28,7 +28,7 @@ const notices = [
 const NoticePage = () => {
   return (
     <div className="p-6 max-w-4xl mx-auto mt-[80px]">
-      <h1 className="text-3xl font-bold mb-8 text-center">공지사항</h1>{" "}
+      <h1 className="text-3xl font-bold mb-8 text-center">주요소식</h1>{" "}
       {/* 텍스트 중앙 정렬 */}
       {/* 공지사항 리스트 */}
       <div className="bo_list" style={{ marginBottom: 100, marginTop: 50 }}>
