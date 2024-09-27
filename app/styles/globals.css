@@ -132,3 +132,21 @@ body {
   box-sizing: border-box;
   font-weight: 400;
 }
+.social_btn_1,
+.social_btn_2,
+.social_btn_3,
+.social_btn_4 {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+.social_btn_1 img,
+.social_btn_2 img,
+.social_btn_3 img,
+.social_btn_4 img {
+  border-radius: 100%;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
