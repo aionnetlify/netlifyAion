@@ -18,13 +18,6 @@ const notices = [
 ];
 
 const NoticePage = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    // 공지사항 클릭 시 해당 내용 열기/닫기
-    const toggleNotice = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
     return (
         <div className="p-6 max-w-4xl mx-auto mt-[80px]">
             <h1 className="text-3xl font-bold mb-8 text-center">공지사항</h1> {/* 텍스트 중앙 정렬 */}
