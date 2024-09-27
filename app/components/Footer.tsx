@@ -6,15 +6,22 @@ import React, { useEffect, useState } from "react";
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div
+        className="container mx-auto flex flex-col md:flex-row justify-between items-center"
+        style={{ paddingLeft: 150, paddingRight: 150 }}
+      >
         <div className="text-center md:text-left">
           <h6 className="uppercase">
-            <span className="footer">
+            <span style={{ marginRight: 8 }}>
               ㈜케이티 경기도 성남시 분당구 불정로 90 (정자동)
             </span>
-            <span className="footer">대표자명 : 김영섭</span>
-            <span className="footer">사업자등록번호 : 102-81-42945</span>
-            <span className="footer">통신판매업신고 : 2002-경기성남-0048</span>
+            <span style={{ marginRight: 8 }}>대표자명 : 김영섭</span>
+            <span style={{ marginRight: 8 }}>
+              사업자등록번호 : 102-81-42945
+            </span>
+            <span style={{ marginRight: 8 }}>
+              통신판매업신고 : 2002-경기성남-0048
+            </span>
           </h6>
           <p className="mt-2">
             Copyright@ 2024 KTDS Corp. All Rights Reserved.

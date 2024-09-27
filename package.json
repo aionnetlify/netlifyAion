@@ -17,7 +17,6 @@
     "next": "^15.0.0-rc.0",
     "react": "^19.0.0-rc-e948a5ac-20240807",
     "react-dom": "^19.0.0-rc-e948a5ac-20240807",
-    "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.9",
     "typescript": "^5.5.4",
