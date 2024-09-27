@@ -36,7 +36,8 @@ const FAQPage = () => {
 
     return (
         <div className="p-6 max-w-4xl mx-auto mt-[80px]">
-            <h1 className="text-3xl font-bold mb-8 text-center">제품문의</h1> {/* 텍스트 중앙 정렬 */}
+            <h1 className="text-3xl font-bold mb-8 text-center">AION-U 에 대해 궁금한 점을 확인해보세요</h1> {/* 텍스트 중앙 정렬 */}
+            <h2 className="text-3xl font-bold mb-8 text-center">문의처 aion-u@kt.com</h2> {/* 텍스트 중앙 정렬 */}
             <table className="w-full table-fixed border-collapse border border-gray-300 mb-6">
                 <thead>
                 <tr className="bg-gray-100">
